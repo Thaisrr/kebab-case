@@ -1,0 +1,61 @@
+header .since {
+  font-family: 'Imperial Script', cursive;;
+}
+
+header {
+  height: 70vh;
+  position: relative;
+  margin-bottom: 100px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 90%);
+}
+
+header, .text {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 3.2em;
+  margin-bottom: 15px;
+  overflow: hidden;
+  position: relative;
+  width: fit-content;
+  z-index: 2;
+  color: #ffdf93;
+
+}
+
+header h1::after {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 110%;
+  top: 70%;
+  left: -5%;
+  z-index: 1;
+}
+
+header .img {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  top: 0;
+  max-height: 100%;
+}
+
+header .subtitle, .since {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+header .text {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 80%);
+  padding: 20px;
+  width: 60%;
+  margin: auto;
+  border-radius: 5px;
+  color: white;
+}
