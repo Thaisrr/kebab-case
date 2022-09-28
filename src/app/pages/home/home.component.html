@@ -1,9 +1,8 @@
 <main>
   <h2>Décrouvrez nos menus</h2>
 
-  <div class="grid">
-
+  <div class="grid" *ngIf="sandwiches">
     <app-card *ngFor="let s of sandwiches" [sandwich]="s"></app-card>
-
   </div>
+  <div *ngIf="!sandwiches">Oh no, il n'y a rien à mange :'(</div>
 </main>

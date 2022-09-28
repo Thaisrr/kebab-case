@@ -3,10 +3,17 @@
 :root {
   --main: #ffdf93;
 }
+:root {
+  --yellow: #ffdf93;
+  --red: #ffdff1;
+  --blue: #E4FDE1;
+  --dark: #152328;
+}
 
 body {
   font-family: "Inter", sans-serif;
   margin: 0;
+  color: var(--dark);
 }
 
 * {box-sizing: border-box}
@@ -14,4 +21,22 @@ body {
 h1, h2, h3, .subtitle {
   font-family: "Comfortaa", sans-serif;
   text-align: center;
+}
+
+
+.img-container {
+  overflow: hidden;
+}
+
+.img-container img {
+  width: 100%;
+}
+
+.centered {
+  width: 80%;
+  margin: auto;
+}
+
+main {
+  margin: 200px auto;
 }

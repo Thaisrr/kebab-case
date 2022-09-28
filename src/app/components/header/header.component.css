@@ -1,7 +1,9 @@
+
+
 header .since {
   font-family: 'Imperial Script', cursive;;
 }
-
+/*
 header {
   height: 70vh;
   position: relative;
@@ -58,4 +60,82 @@ header .text {
   margin: auto;
   border-radius: 5px;
   color: white;
+}
+*/
+
+header {
+  margin: 50px auto 100px;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+header .text {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+header h1 {
+  font-size: 3.5em;
+  margin-bottom: 15px;
+  position: relative;
+  width: fit-content;
+  z-index: 2;
+
+}
+
+header h1::after {
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 110%;
+  top: 65%;
+  left: -5%;
+  z-index: -1;
+  background-color: var(--yellow);
+  clip-path: polygon(0 0, 95% 0, 100% 100%, 5% 100%);
+
+}
+
+header .subtitle, .since {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+
+header .img-container {
+  width: 50%;
+  position: relative;
+  overflow: visible;
+}
+
+.img-container, .img-container img {
+  border-radius: 8px;
+}
+
+.img-container::before {
+  content: '';
+  width: 170px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--red);
+  position: absolute;
+  z-index: -1;
+  right: -35px;
+  top: -35px;
+}
+
+.img-container::after {
+  content: '';
+  width: 55%;
+  height: 80px;
+  background: var(--blue);
+  position: absolute;
+  z-index: -1;
+  left: -30px;
+  bottom: -25px;
 }
