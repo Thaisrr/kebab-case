@@ -11,7 +11,7 @@ export class HomeComponent  {
   sandwiches : Sandwich[] = [
     {
       id: 1,
-      title: 'Kebab Classique',
+      title: 'KEBAb classique',
       description: 'Le Kebab berliner par excellence',
       image: 'assets/sandwich.webp',
       price: 7.5,
@@ -19,7 +19,7 @@ export class HomeComponent  {
     },
     {
       id: 2,
-      title: 'Kebab Naan',
+      title: 'Kebab NAAN',
       description: 'Testez bla blabla miam miam',
       image: 'assets/naankebabD.png',
       price: 8.5,
@@ -27,7 +27,7 @@ export class HomeComponent  {
     },
     {
       id: 3,
-      title: 'Wrap Excellence',
+      title: 'wrap excellence',
       description: 'Le Kebab berliner par excellence',
       image: 'assets/wrap.png',
       price: 6.5,
@@ -35,7 +35,7 @@ export class HomeComponent  {
     },
     {
       id: 4,
-      title: 'Salade Fresh',
+      title: 'salade Fresh',
       description: 'Découvrez la fraicheur de la salade fresh',
       image: 'assets/salade.png',
       price: 9.5,

@@ -3,17 +3,7 @@
 
   <div class="grid">
 
-    <article *ngFor="let sand of sandwiches" class="card" [class.best]="sand.is_best_seller">
-      <div class="c-header">
-        <img class="img" [src]="'../../../' + sand.image" alt="">
-      </div>
-      <div class="c-body">
-        <h3>{{sand.title}}</h3>
-        <p>{{sand.description}}</p>
-        <p>{{sand.price}} €</p>
-        <button>Commander</button>
-      </div>
-    </article>
+    <app-card *ngFor="let s of sandwiches" [sandwich]="s"></app-card>
 
   </div>
 </main>

@@ -52,7 +52,7 @@ header .subtitle, .since {
 
 header .text {
   text-align: center;
-  background-color: rgba(0, 0, 0, 80%);
+  background-color: rgba(72, 56, 34, 0.7);
   padding: 20px;
   width: 60%;
   margin: auto;

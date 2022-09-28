@@ -1,0 +1,11 @@
+<article *ngIf="sandwich" class="card" [class.best]="sandwich.is_best_seller">
+  <div class="c-header">
+    <img class="img" [src]="'../../../' + sandwich.image" alt="">
+  </div>
+  <div class="c-body">
+    <h3>{{sandwich.title | titlecase}}</h3>
+    <p>{{sandwich.description}}</p>
+    <p>{{sandwich.price}} €</p>
+    <button>Commander</button>
+  </div>
+</article>
