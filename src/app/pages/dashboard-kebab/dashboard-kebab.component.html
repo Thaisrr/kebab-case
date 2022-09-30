@@ -21,7 +21,7 @@
           <td>{{k.price}}</td>
           <td>{{k.is_best_seller ? '👑 OUI' : 'NON'}}</td>
           <td>
-            <button class="delete-btn">Supprimer</button>
+            <button (click)="deleteKebab(k)" class="delete-btn">Supprimer</button>
           </td>
         </tr>
       </tbody>

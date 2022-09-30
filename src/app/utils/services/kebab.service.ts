@@ -50,4 +50,9 @@ export class KebabService {
     this.sandwiches.push(new_sandwich);
   }
 
+  deleteOne(kebab: Sandwich) {
+    const index = this.sandwiches.indexOf(kebab);
+    this.sandwiches.splice(index, 1);
+  }
+
 }

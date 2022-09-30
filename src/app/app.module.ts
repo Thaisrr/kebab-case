@@ -11,6 +11,7 @@ import { PresentationComponent } from './components/presentation/presentation.co
 import { FormKebabComponent } from './pages/form-kebab/form-kebab.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { DashboardKebabComponent } from './pages/dashboard-kebab/dashboard-kebab.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { DashboardKebabComponent } from './pages/dashboard-kebab/dashboard-kebab
     CardComponent,
     PresentationComponent,
     FormKebabComponent,
-    DashboardKebabComponent
+    DashboardKebabComponent,
+    NavigationComponent
   ],
   imports: [
     BrowserModule,

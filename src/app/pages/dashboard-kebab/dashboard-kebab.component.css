@@ -1,5 +1,8 @@
-
+.centered {
+  margin: 150px auto;
+}
 table {
+  margin-top: 60px;
   border: solid black 2px;
   width: 100%;
   border-collapse: collapse;

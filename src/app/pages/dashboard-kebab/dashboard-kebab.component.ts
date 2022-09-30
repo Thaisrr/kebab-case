@@ -16,4 +16,7 @@ export class DashboardKebabComponent implements OnInit {
     this.kebabs = this.kebabService.getAll();
   }
 
+  deleteKebab(kebab: Sandwich) {
+    this.kebabService.deleteOne(kebab)
+  }
 }
