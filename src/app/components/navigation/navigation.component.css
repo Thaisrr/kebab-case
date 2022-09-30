@@ -1,0 +1,43 @@
+nav {
+  height: 70px;
+  background-color: white;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  height: 100%;
+}
+
+li {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: #152328;
+  font-size: 1.1em;
+  padding: 5px 0;
+  position: relative;
+}
+
+a:link:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 0;
+  background-color: #152328;
+  transition: width .5s;
+}
+
+a:link:hover:after {
+  width: 100%;
+}
+
