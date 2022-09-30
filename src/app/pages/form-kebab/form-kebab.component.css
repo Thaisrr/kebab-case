@@ -39,3 +39,23 @@ button {
   font-size: 1.2em;
   border-radius: 5px;
 }
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+input.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+input.ng-touched.ng-invalid:focus {
+  outline-color: rgba(255, 91, 91, 0.67);
+}
+
+input.ng-touched.ng-valid {
+  border-color: green;
+}
+
+input.ng-touched.ng-valid:focus {
+  outline-color: rgba(70, 244, 70, 0.67);
+}
