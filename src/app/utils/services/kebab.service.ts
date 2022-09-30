@@ -45,4 +45,9 @@ export class KebabService {
     return this.sandwiches;
   }
 
+  create(new_sandwich: Sandwich) {
+    // post vers l'API
+    this.sandwiches.push(new_sandwich);
+  }
+
 }

@@ -1,5 +1,5 @@
 export interface Sandwich {
-  id: number;
+  id?: number;
   title: string;
   image: string;
   description: string;

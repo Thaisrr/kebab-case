@@ -8,6 +8,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 import { CardComponent } from './components/card/card.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
+import { FormKebabComponent } from './pages/form-kebab/form-kebab.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { PresentationComponent } from './components/presentation/presentation.co
     HeaderComponent,
     NotfoundComponent,
     CardComponent,
-    PresentationComponent
+    PresentationComponent,
+    FormKebabComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

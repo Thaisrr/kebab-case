@@ -1,17 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Imperial+Script&family=Inter&display=swap');
 
-:root {
-  --main: #ffdf93;
-}
+
 :root {
   --yellow: #ffdf93;
   --red: #ffdff1;
   --blue: #E4FDE1;
   --dark: #152328;
+  --script: 'Imperial Script', cursive;
+  --main-font: "Inter", sans-serif;
+  --title-font: "Comfortaa", sans-serif;
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--main-font);
   margin: 0;
   color: var(--dark);
 }
@@ -19,7 +20,7 @@ body {
 * {box-sizing: border-box}
 
 h1, h2, h3, .subtitle {
-  font-family: "Comfortaa", sans-serif;
+  font-family: var(--title-font);
   text-align: center;
 }
 
