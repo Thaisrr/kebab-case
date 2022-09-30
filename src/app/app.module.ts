@@ -10,6 +10,7 @@ import { CardComponent } from './components/card/card.component';
 import { PresentationComponent } from './components/presentation/presentation.component';
 import { FormKebabComponent } from './pages/form-kebab/form-kebab.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import { DashboardKebabComponent } from './pages/dashboard-kebab/dashboard-kebab.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     NotfoundComponent,
     CardComponent,
     PresentationComponent,
-    FormKebabComponent
+    FormKebabComponent,
+    DashboardKebabComponent
   ],
   imports: [
     BrowserModule,

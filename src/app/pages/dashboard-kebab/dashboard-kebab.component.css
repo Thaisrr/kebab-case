@@ -1,0 +1,65 @@
+
+table {
+  border: solid black 2px;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+}
+
+table:after {
+  content: '';
+  width: 200px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  color: var(--blue);
+
+}
+
+thead {
+  background-color: var(--yellow);
+  border-bottom: solid black 2px;
+  border-radius: 8px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 8px;
+}
+thead th:first-child {
+  border-top-left-radius: 8px;
+
+}
+
+thead th {
+  font-family: var(--title-font);
+  text-align: left;
+  padding: 10px 15px;
+
+}
+
+td {
+  padding: 10px 15px;
+  border-bottom: solid grey 1px;
+  font-family: var(--main-font);
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
+  text-transform: capitalize;
+  padding: 5px 8px;
+  font-size: .9em;
+  border-radius: 5px;
+  transition: background-color .2s;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+  background-color: rgba(60, 60, 60, 0.07);
+}
+
+tbody tr:hover {
+  background-color: rgba(174, 174, 174, 0.07);;
+}
