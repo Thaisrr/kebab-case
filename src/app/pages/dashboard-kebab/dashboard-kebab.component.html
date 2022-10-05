@@ -16,12 +16,12 @@
       <tbody>
         <tr *ngFor="let k of kebabs">
           <td>{{k.id}}</td>
-          <td>{{k.title}}</td>
+          <td>{{k.name}}</td>
           <td>{{k.description}}</td>
           <td>{{k.price}}</td>
           <td>{{k.is_best_seller ? '👑 OUI' : 'NON'}}</td>
           <td>
-            <button (click)="deleteKebab(k)" class="delete-btn">Supprimer</button>
+            <button (click)="toggle(k)" class="delete-btn">Supprimer</button>
           </td>
         </tr>
       </tbody>
@@ -31,3 +31,8 @@
     <p>Oh Non ! 😢 Il y n'y a pas de Kebabs enregistrés pour le moment</p>
   </ng-template>
 </main>
+
+<app-dialog class="error" [open]="open_dialog" action_name="Supprimer" (confirm)="deleteKebab($event)">
+  <h3>Êtes vous sûr de vouloir supprimer ce sandwich ?</h3>
+  <p>Celui sera définitivement supprimé de la base de données.</p>
+</app-dialog>

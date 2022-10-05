@@ -9,14 +9,28 @@ import {Sandwich} from "../../utils/models/sandwich";
 })
 export class DashboardKebabComponent implements OnInit {
   kebabs?: Sandwich[];
+  open_dialog = false;
+  kebab_to_delete: Sandwich | undefined;
 
   constructor(private kebabService: KebabService) { }
 
   ngOnInit(): void {
-    this.kebabs = this.kebabService.getAll();
+    this.kebabService.getAll().subscribe(res => this.kebabs = res);
   }
 
-  deleteKebab(kebab: Sandwich) {
-    this.kebabService.deleteOne(kebab)
+  deleteKebab(is_deleted: boolean) {
+    this.open_dialog = true;
+    if(this.kebab_to_delete && is_deleted) {
+      this.kebabService.deleteOne(this.kebab_to_delete);
+      this.toggle();
+    } else if (!is_deleted) {
+      this.toggle()
+    }
+
+  }
+
+  toggle(delete_obj?: Sandwich) {
+    this.kebab_to_delete = delete_obj;
+    this.open_dialog = !this.open_dialog;
   }
 }

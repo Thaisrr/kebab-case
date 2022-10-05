@@ -14,7 +14,8 @@ export class HomeComponent implements OnInit{
     constructor(private kebabService: KebabService) {}
 
   ngOnInit() {
-      this.sandwiches = this.kebabService.getAll();
+    this.kebabService.getAll().subscribe(
+      response => this.sandwiches = response
+    )
   }
-
 }

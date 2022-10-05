@@ -12,6 +12,8 @@ import { FormKebabComponent } from './pages/form-kebab/form-kebab.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { DashboardKebabComponent } from './pages/dashboard-kebab/dashboard-kebab.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import {HttpClientModule} from "@angular/common/http";
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { NavigationComponent } from './components/navigation/navigation.componen
     PresentationComponent,
     FormKebabComponent,
     DashboardKebabComponent,
-    NavigationComponent
+    NavigationComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

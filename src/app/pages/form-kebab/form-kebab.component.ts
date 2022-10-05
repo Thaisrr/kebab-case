@@ -18,7 +18,7 @@ export class FormKebabComponent  {
   */
 
   kebab_groupe = new FormGroup({
-    title: new FormControl<string>('', [Validators.required]),
+    name: new FormControl<string>('', [Validators.required]),
     description: new FormControl<string>('', [Validators.required]),
     image: new FormControl<string>('', [Validators.required]),
     price: new FormControl<number>(0, [Validators.required, Validators.min(1)]),
@@ -36,8 +36,8 @@ export class FormKebabComponent  {
 
   }
 
-  get title() {
-    return this.kebab_groupe.controls.title;
+  get name() {
+    return this.kebab_groupe.controls.name;
   }
   get description() {
     return this.kebab_groupe.controls.description;

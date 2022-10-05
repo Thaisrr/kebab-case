@@ -1,58 +1,23 @@
 import { Injectable } from '@angular/core';
 import {Sandwich} from "../models/sandwich";
+import {HttpClient} from "@angular/common/http";
+import {Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class KebabService {
-  sandwiches : Sandwich[] = [
-    {
-      id: 1,
-      title: 'KEBAb classique',
-      description: 'Le Kebab berliner par excellence',
-      image: 'assets/sandwich.webp',
-      price: 7.5,
-      is_best_seller: true
-    },
-    {
-      id: 2,
-      title: 'Kebab NAAN',
-      description: 'Testez bla blabla miam miam',
-      image: 'assets/naankebabD.png',
-      price: 8.5,
-      is_best_seller: false
-    },
-    {
-      id: 3,
-      title: 'wrap excellence',
-      description: 'Le Kebab berliner par excellence',
-      image: 'assets/wrap.png',
-      price: 6.5,
-      is_best_seller: true
-    },
-    {
-      id: 4,
-      title: 'salade Fresh',
-      description: 'Découvrez la fraicheur de la salade fresh',
-      image: 'assets/salade.png',
-      price: 9.5,
-      is_best_seller: false
-    },
-  ]
+  url = 'http://localhost:3000/kebabs';
 
-  getAll(): Sandwich[] {
-    // va chercher dans l'API
-    return this.sandwiches;
+  constructor(private http: HttpClient) {}
+
+
+  getAll(): Observable<Sandwich[]> {
+    return this.http.get<Sandwich[]>(this.url);
   }
 
-  create(new_sandwich: Sandwich) {
-    // post vers l'API
-    this.sandwiches.push(new_sandwich);
-  }
+  create(new_sandwich: Sandwich) {}
 
-  deleteOne(kebab: Sandwich) {
-    const index = this.sandwiches.indexOf(kebab);
-    this.sandwiches.splice(index, 1);
-  }
+  deleteOne(kebab: Sandwich) {}
 
 }

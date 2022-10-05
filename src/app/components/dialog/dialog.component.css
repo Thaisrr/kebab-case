@@ -1,0 +1,62 @@
+.bg {
+  --main: var(--yellow);
+  --secondary: var(--dark);
+}
+
+.bg.error {
+  --main: #d50000;
+  --secondary: white;
+}
+
+.bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(21, 35, 40, 0.53);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+}
+
+dialog {
+  width: min(500px, 85vw);
+  margin: auto;
+  transform: translateY(-10vh);
+  background-color: white;
+  box-shadow: 2px 2px 8px rgba(84, 97, 104, 0.58);
+  border-radius: 10px;
+  padding: 10px;
+  border: none;
+  position: relative;
+  z-index: 2;
+}
+
+dialog .body {
+  padding: 0 30px 10px;
+}
+
+.close, .btn-container {
+  display: flex;
+  justify-content: right;
+  gap: 25px;
+}
+
+dialog button {
+  padding: 10px;
+  font-size: 1.3em;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+
+.close button:hover, button.tertiary:hover {
+  background-color: rgba(184, 196, 202, 0.26);
+}
+
+.btn-container button.primary {
+  background-color: var(--main);
+  color: var(--secondary);
+}
