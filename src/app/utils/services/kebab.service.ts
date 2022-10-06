@@ -22,8 +22,9 @@ export class KebabService {
 
   create(new_sandwich: Sandwich) {}
 
-  deleteOne(kebab: Sandwich) {
-    //
+
+  deleteOne(id: number): Observable<any> {
+    return this.http.delete<any>(this.url + '/' + id)
   }
 
 }

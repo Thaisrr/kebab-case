@@ -15,6 +15,10 @@ export class DashboardKebabComponent implements OnInit {
   constructor(private kebabService: KebabService) { }
 
   ngOnInit(): void {
+    this.loadSandwiches();
+  }
+
+  loadSandwiches() {
     this.kebabService.getAll().subscribe(res => this.kebabs = res);
   }
 
@@ -23,9 +27,12 @@ export class DashboardKebabComponent implements OnInit {
    * @param confirm : boolean, true si l'utilisateur a cliqué sur "supprimer" dans la modale, false s'il a annulé
    */
   deleteKebab(confirm: boolean) {
-    if(this.kebab_to_delete && confirm) {
-      //
-      this.kebabService.deleteOne(this.kebab_to_delete);
+    if(this.kebab_to_delete && confirm && this.kebab_to_delete.id) {
+      // todo: (2) modifier l'appel au service
+      // faire un console.log si suppression OK
+      // ( opt ) : recharger les données
+      this.kebabService.deleteOne(this.kebab_to_delete.id)
+        .subscribe(() => this.loadSandwiches());
 
       this.toggle();
     } else if (!confirm) {
