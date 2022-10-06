@@ -22,6 +22,8 @@ export class KebabService {
 
   create(new_sandwich: Sandwich) {}
 
-  deleteOne(kebab: Sandwich) {}
+  deleteOne(kebab: Sandwich) {
+    //
+  }
 
 }

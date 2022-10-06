@@ -22,7 +22,9 @@ export class OrderComponent implements OnInit {
   loadSandwich() {
     if(this.id) {
       this.kebabService.getById(this.id)
-        .subscribe(response => this.sandwich = response )
+        .subscribe(response => {
+          this.sandwich = response;
+        })
     }
   }
 
