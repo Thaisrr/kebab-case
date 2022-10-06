@@ -6,6 +6,6 @@
     <h3>{{sandwich.name | titlecase}}</h3>
     <p>{{sandwich.description}}</p>
     <p>{{sandwich.price}} €</p>
-    <button>Commander</button>
+    <a [routerLink]="'/order/' + sandwich.id">Commander</a>
   </div>
 </article>

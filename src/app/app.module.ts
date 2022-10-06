@@ -14,6 +14,7 @@ import { DashboardKebabComponent } from './pages/dashboard-kebab/dashboard-kebab
 import { NavigationComponent } from './components/navigation/navigation.component';
 import {HttpClientModule} from "@angular/common/http";
 import { DialogComponent } from './components/dialog/dialog.component';
+import { OrderComponent } from './pages/order/order.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { DialogComponent } from './components/dialog/dialog.component';
     FormKebabComponent,
     DashboardKebabComponent,
     NavigationComponent,
-    DialogComponent
+    DialogComponent,
+    OrderComponent
   ],
   imports: [
     BrowserModule,

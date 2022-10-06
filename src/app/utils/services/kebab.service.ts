@@ -16,6 +16,10 @@ export class KebabService {
     return this.http.get<Sandwich[]>(this.url);
   }
 
+  getById(id: number): Observable<Sandwich> {
+    return this.http.get<Sandwich>(`${this.url}/${id}`);
+  }
+
   create(new_sandwich: Sandwich) {}
 
   deleteOne(kebab: Sandwich) {}
