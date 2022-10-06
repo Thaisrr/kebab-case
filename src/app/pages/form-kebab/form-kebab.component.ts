@@ -30,9 +30,12 @@ export class FormKebabComponent  {
   handleSubmit() {
     if(this.kebab_groupe.valid) {
       const kebab: Sandwich = this.kebab_groupe.value as Sandwich;
-      this.kebabService.create(kebab);
-      this.kebab_groupe.reset();
+      this.kebabService.create(kebab).subscribe(() => {
+        this.kebab_groupe.reset();
+      });
     }
+
+    [1, 2, 3].forEach((el, index) => {})
 
   }
 

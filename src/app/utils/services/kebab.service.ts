@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Sandwich} from "../models/sandwich";
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, tap} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -20,11 +20,13 @@ export class KebabService {
     return this.http.get<Sandwich>(`${this.url}/${id}`);
   }
 
-  create(new_sandwich: Sandwich) {}
+  create(new_kebab: Sandwich): Observable<Sandwich> {
+    return this.http.post<Sandwich>(this.url, new_kebab);
+  }
 
 
-  deleteOne(id: number): Observable<any> {
-    return this.http.delete<any>(this.url + '/' + id)
+  deleteOne(id: number): Observable<{}> {
+    return this.http.delete<{}>(this.url + '/' + id);
   }
 
 }
