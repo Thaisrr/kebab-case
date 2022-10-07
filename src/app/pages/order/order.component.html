@@ -1,7 +1,7 @@
 <main *ngIf="sandwich">
   <h1>{{sandwich.name | titlecase}}</h1>
 
-  <form (ngSubmit)="saveOrder()" [formGroup]="order_form">
+  <form (ngSubmit)="saveOrder($event)" [formGroup]="order_form">
     <div>
       <label for="protein">Protéine</label>
       <select id="protein" formControlName="protein">
@@ -23,7 +23,7 @@
         <legend>Légumes</legend>
         <div *ngFor="let v of veggies">
           <label [for]="v">{{v}}</label>
-          <input [id]="v" [value]="v" type="checkbox" name="veggies" (change)="addVeggie(v, $event)" >
+          <input  [id]="v"  [value]="v" type="checkbox" name="veggies" (change)="addVeggie(v, $event)" />
         </div>
       </fieldset>
     </div>

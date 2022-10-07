@@ -4,6 +4,8 @@ import {KebabService} from "../../utils/services/kebab.service";
 import {Sandwich} from "../../utils/models/sandwich";
 import {Observable} from "rxjs";
 import {FormArray, FormControl, FormGroup} from "@angular/forms";
+import {Order, Panier} from "../../utils/models/panier";
+import {PanierService} from "../../utils/services/panier.service";
 
 @Component({
   selector: 'app-order',
@@ -18,7 +20,11 @@ export class OrderComponent implements OnInit {
   boissons = ["Thé glacé Menthe", "Thé Glacé Gingembre", "Limonade Citron Vert", "Kombucha"]
   veggies = ["Salade", "Betteraves", "Oignons", "Maïs", "Olive", "Pickles de Carottes", "Gingembre Frais", "Coriandre", "Ciboulette", "Shitaké", "Poivrons Marinés"]
 
-  constructor(private route: ActivatedRoute, private kebabService: KebabService) {
+  constructor(
+    private route: ActivatedRoute,
+    private kebabService: KebabService,
+    private panierService: PanierService
+  ) {
     this.order_form = new FormGroup({
       quantity: new FormControl<number>(1),
       protein: new FormControl<string>(''),
@@ -50,31 +56,23 @@ export class OrderComponent implements OnInit {
     }
   }
 
-  saveOrder() {
-    let order = this.order_form.value;
-    if(this.sandwich) {
-      order.name = this.sandwich.name;
-      order.price = this.sandwich.price;
-      order.total = this.sandwich.price * order.quantity;
 
-      let order2: Order = {
+
+
+  saveOrder(e: Event) {
+    if(this.sandwich) {
+      let order: Order = {
         ...this.order_form.value,
         name: this.sandwich?.name,
         price: this.sandwich?.price,
         total: this.sandwich.price * this.order_form.value.quantity
       }
+      this.panierService.add(order);
+      this.order_form.reset();
+      const form = e.target as HTMLFormElement;
+      form.reset();
     }
-
-    console.log(order);
   }
 }
 
-interface Order {
-  name: string;
-  price: string;
-  quantity: number;
-  boissons: string;
-  total: number;
-  protein: string;
-  legumes: string[];
-}
+

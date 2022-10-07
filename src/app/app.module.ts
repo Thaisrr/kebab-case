@@ -15,6 +15,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import {HttpClientModule} from "@angular/common/http";
 import { DialogComponent } from './components/dialog/dialog.component';
 import { OrderComponent } from './pages/order/order.component';
+import { PanierComponent } from './pages/panier/panier.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { OrderComponent } from './pages/order/order.component';
     DashboardKebabComponent,
     NavigationComponent,
     DialogComponent,
-    OrderComponent
+    OrderComponent,
+    PanierComponent
   ],
   imports: [
     BrowserModule,

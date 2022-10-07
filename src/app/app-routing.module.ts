@@ -5,12 +5,14 @@ import {NotfoundComponent} from "./pages/notfound/notfound.component";
 import {FormKebabComponent} from "./pages/form-kebab/form-kebab.component";
 import {DashboardKebabComponent} from "./pages/dashboard-kebab/dashboard-kebab.component";
 import {OrderComponent} from "./pages/order/order.component";
+import {PanierComponent} from "./pages/panier/panier.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'create', component: FormKebabComponent},
   {path: 'dashboard', component: DashboardKebabComponent},
   {path: 'order/:id', component: OrderComponent},
+  {path: 'panier', component: PanierComponent},
   {path: '**', component: NotfoundComponent}
 ];
 

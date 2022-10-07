@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {PanierService} from "../../utils/services/panier.service";
+import {Panier} from "../../utils/models/panier";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-navigation',
@@ -6,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css']
 })
 export class NavigationComponent implements OnInit {
+  panier: Observable<number>;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private panierService: PanierService) {
+    this.panier = this.panierService.panier_size$;
   }
+
+  ngOnInit(): void {}
 
 }
