@@ -1,0 +1,50 @@
+.hint {
+  text-align: center;
+}
+
+.img-container {
+  background-color: #d2ffac;
+  width: max(50%, 400px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 16px;
+}
+
+img {
+  width: 50%;
+}
+
+.speech-bubble {
+  width: 200px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: var(--yellow);
+  box-shadow: 5px 5px #ae8076;
+  height: fit-content;
+  transform: translateY(-100%);
+  position: relative;
+  text-align: center;
+}
+
+.speech-bubble::after, .speech-bubble::before {
+  content: '';
+  width: 80px;
+  height: 20px;
+  box-shadow: 5px 5px #ae8076;
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  background-color: var(--yellow);
+  border-radius: 50px;
+}
+
+.speech-bubble::after {
+  bottom: -60px;
+  width: 40px;
+  right: -40px;
+}
+
+
+

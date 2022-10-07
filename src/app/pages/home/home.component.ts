@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Sandwich} from "../../utils/models/sandwich";
 import {KebabService} from "../../utils/services/kebab.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-home',
@@ -9,13 +10,12 @@ import {KebabService} from "../../utils/services/kebab.service";
 })
 export class HomeComponent implements OnInit{
 
-    sandwiches?: Sandwich[];
+    sandwiches?: Observable<Sandwich[]>;
 
     constructor(private kebabService: KebabService) {}
 
   ngOnInit() {
-    this.kebabService.getAll().subscribe(
-      response => this.sandwiches = response
-    )
+    this.sandwiches = this.kebabService.getAll()
+     // .subscribe(response => this.sandwiches = response)
   }
 }
