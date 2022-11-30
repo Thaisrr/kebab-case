@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-import {Sandwich} from "../models/sandwich";
 import {HttpClient} from "@angular/common/http";
 import {map, Observable, switchMap, tap} from "rxjs";
-import {environment} from "../../../environments/environment";
+import {environment} from "../../../../environments/environment"
 import {DomSanitizer, SafeUrl} from "@angular/platform-browser";
+import {Sandwich} from "../../../shared/models/sandwich";
 
-@Injectable({
-  providedIn: 'root'
-})
-export class KebabService {
+@Injectable()
+export class AdminKebabService {
   url = environment.api + '/menu';
 
   constructor(private http: HttpClient, private sanitizer: DomSanitizer) { }
@@ -17,19 +15,6 @@ export class KebabService {
   getAll(): Observable<Sandwich[]> {
     return this.http.get<Sandwich[]>(`${this.url}`);
   }
-
-  getAllVisible(): Observable<Sandwich[]> {
-    return this.http.get<Sandwich[]>(`${this.url}/visible`).pipe(
-      tap(() => console.log('Kebabs fetched')),
-      map((sandwiches : Sandwich[]): Sandwich[] => sandwiches.map(s => {
-        s.image = environment.api + s.image;
-        return s;
-      })),
-      tap((sandwiches) => console.log('Sandwiches', sandwiches)),
-
-    );
-  }
-
 
   getById(id: number): Observable<Sandwich> {
     return this.http.get<Sandwich>(`${this.url}/${id}`);
@@ -44,8 +29,6 @@ export class KebabService {
       map(() => true)
     )
   };
-
-
 
 
   deleteOne(id: number): Observable<{}> {

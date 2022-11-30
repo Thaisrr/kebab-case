@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {Sandwich} from "../../utils/models/sandwich";
+import {Sandwich} from "../../../../shared/models/sandwich";
 
 @Component({
   selector: 'app-card',

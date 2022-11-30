@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Sandwich} from "../../../utils/models/sandwich";
-import {KebabService} from "../../../utils/services/kebab.service";
+import {Sandwich} from "../../../shared/models/sandwich";
+import {KebabService} from "../../services/kebab.service";
 import {Observable} from "rxjs";
 
 @Component({

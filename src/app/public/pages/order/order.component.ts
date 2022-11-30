@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {KebabService} from "../../../utils/services/kebab.service";
-import {Sandwich} from "../../../utils/models/sandwich";
-import {Observable} from "rxjs";
+import {KebabService} from "../../services/kebab.service";
+import {Sandwich} from "../../../shared/models/sandwich";
 import {FormArray, FormControl, FormGroup} from "@angular/forms";
-import {Menu, Panier} from "../../../utils/models/panier";
-import {PanierService} from "../../../utils/services/panier.service";
+import {Menu} from "../../../shared/models/panier";
+import {PanierService} from "../../services/panier.service";
 
 @Component({
   selector: 'app-order',
@@ -40,7 +39,7 @@ export class OrderComponent implements OnInit {
 
   loadSandwich() {
     if(this.id) {
-      this.kebabService.getById(this.id)
+      this.kebabService.getByIdIfVisible(this.id)
         .subscribe(response => this.sandwich = response)
     }
   }

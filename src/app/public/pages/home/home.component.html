@@ -1,7 +1,7 @@
 <app-header></app-header>
 
 <main>
-  <h2>Décrouvrez nos menus</h2>
+  <h2>Découvrez nos menus</h2>
 
   <div class="grid" *ngIf="sandwiches">
     <app-card *ngFor="let s of sandwiches | async" [sandwich]="s"></app-card>

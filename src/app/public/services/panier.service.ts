@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Menu, Panier} from "../models/panier";
+import {Menu, Panier} from "../../shared/models/panier";
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable, tap} from "rxjs";
 

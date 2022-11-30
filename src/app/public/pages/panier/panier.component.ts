@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Panier} from "../../../utils/models/panier";
-import {PanierService} from "../../../utils/services/panier.service";
+import {Panier} from "../../../shared/models/panier";
+import {PanierService} from "../../services/panier.service";
 import {Router} from "@angular/router";
 
 @Component({

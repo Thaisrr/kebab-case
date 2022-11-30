@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {PanierService} from "../../utils/services/panier.service";
-import {Panier} from "../../utils/models/panier";
+import {PanierService} from "../../services/panier.service";
 import {Observable} from "rxjs";
 
 @Component({

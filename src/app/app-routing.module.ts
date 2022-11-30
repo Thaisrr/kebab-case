@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {HomeComponent} from "./public/pages/home/home.component";
-import {NotfoundComponent} from "./pages/notfound/notfound.component";
-import {FormKebabComponent} from "./modules/admin/pages/form-kebab/form-kebab.component";
-import {DashboardKebabComponent} from "./modules/admin/pages/dashboard-kebab/dashboard-kebab.component";
+import {NotfoundComponent} from "./public/pages/notfound/notfound.component";
 import {OrderComponent} from "./public/pages/order/order.component";
 import {PanierComponent} from "./public/pages/panier/panier.component";
 

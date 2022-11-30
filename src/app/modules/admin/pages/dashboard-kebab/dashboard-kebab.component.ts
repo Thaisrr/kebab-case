@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {KebabService} from "../../../../utils/services/kebab.service";
-import {Sandwich} from "../../../../utils/models/sandwich";
+import {Sandwich} from "../../../../shared/models/sandwich";
+import {AdminKebabService} from "../../services/admin.kebab.service";
 
 @Component({
   selector: 'app-dashboard-kebab',
@@ -12,7 +12,7 @@ export class DashboardKebabComponent implements OnInit {
   open_dialog = false;
   kebab_to_delete: Sandwich | undefined;
 
-  constructor(private kebabService: KebabService) { }
+  constructor(private kebabService: AdminKebabService) { }
 
   ngOnInit(): void {
     this.loadSandwiches();

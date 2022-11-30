@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import {FormControl, FormGroup, Validator, Validators} from "@angular/forms";
-import {Sandwich} from "../../../../utils/models/sandwich";
-import {KebabService} from "../../../../utils/services/kebab.service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {Sandwich} from "../../../../shared/models/sandwich";
+import {AdminKebabService} from "../../services/admin.kebab.service";
 
 @Component({
   selector: 'app-form-kebab',
@@ -21,7 +21,7 @@ export class FormKebabComponent  {
    // img: new FormControl<File | null>( null, [Validators.required])
   });
 
-  constructor(private kebabService: KebabService) {}
+  constructor(private kebabService: AdminKebabService) {}
 
   handleSubmit() {
     if(this.file) {
