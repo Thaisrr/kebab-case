@@ -17,7 +17,7 @@ export class PresentationComponent implements OnInit {
 
   // Method to listen to the scroll event
   onScroll(): void {
-    this.renderer.listen('window', 'scroll', (e) => {
+    this.renderer.listen('window', 'scroll', () => {
       this.animateImage();
     });
   }
