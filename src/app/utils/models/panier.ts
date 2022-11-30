@@ -1,10 +1,11 @@
 export interface Panier {
-  menus: Order[],
+  menus: Menu[],
   total: number,
   date: Date
 }
 
-export interface Order {
+export interface Menu {
+  id?: number;
   name: string;
   price: string;
   quantity: number;
@@ -13,3 +14,14 @@ export interface Order {
   protein: string;
   legumes: string[];
 }
+
+export interface Supplement {
+  id?: number;
+  image?: string;
+  name: string;
+  price: number;
+  description: string;
+  type: SupplementType;
+}
+
+export type SupplementType = 'boisson' | 'extra';

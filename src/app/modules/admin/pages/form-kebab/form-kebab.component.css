@@ -1,0 +1,12 @@
+.flex {
+  margin: 200px auto;
+  display: grid;
+  grid-template-columns: 40% 25%;
+  align-items: center;
+  gap: 35%;
+}
+
+.img-container {
+  overflow: hidden;
+  border-radius: 8px;
+}

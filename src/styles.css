@@ -41,3 +41,125 @@ h1, h2, h3, .subtitle {
 main {
   margin: 200px auto;
 }
+
+
+/******* Formulaires *************/
+
+
+.group, form div {
+  margin-bottom: 20px;
+}
+
+textarea, input:not([type='checkbox']):not([type='radio']) {
+  border: solid grey 1px;
+  border-radius: 5px;
+  display: block;
+  line-height: 2em;
+  vertical-align: center;
+  width: 100%;
+}
+
+*:focus {
+  outline: #ffdf93 3px solid;
+}
+
+.group > .error, form > .error {
+  color: red;
+}
+
+button {
+  background-color: #ffdf93;
+  border: solid black 2px;
+  padding: 10px 15px;
+  font-size: 1.2em;
+  border-radius: 5px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+input.ng-touched.ng-invalid {
+  border-color: red;
+}
+
+input.ng-touched.ng-invalid:focus {
+  outline-color: rgba(255, 91, 91, 0.67);
+}
+
+input.ng-touched.ng-valid {
+  border-color: green;
+}
+
+input.ng-touched.ng-valid:focus {
+  outline-color: rgba(70, 244, 70, 0.67);
+}
+
+
+/******** Tableaux ***************/
+
+table {
+  margin-top: 60px;
+  border: solid black 2px;
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: white;
+  position: relative;
+}
+
+table:after {
+  content: '';
+  width: 200px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  color: var(--blue);
+
+}
+
+thead {
+  background-color: var(--yellow);
+  border-bottom: solid black 2px;
+  border-radius: 8px;
+}
+
+thead th:last-child {
+  border-top-right-radius: 8px;
+}
+thead th:first-child {
+  border-top-left-radius: 8px;
+
+}
+
+thead th {
+  font-family: var(--title-font);
+  text-align: left;
+  padding: 10px 15px;
+
+}
+
+td {
+  padding: 10px 15px;
+  border-bottom: solid grey 1px;
+  font-family: var(--main-font);
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
+  text-transform: capitalize;
+  padding: 5px 8px;
+  font-size: .9em;
+  border-radius: 5px;
+  transition: background-color .2s;
+}
+
+.delete-btn:hover {
+  cursor: pointer;
+  background-color: rgba(60, 60, 60, 0.07);
+}
+
+tbody tr:hover {
+  background-color: rgba(174, 174, 174, 0.07);;
+}

@@ -3,19 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { HeaderComponent } from './components/header/header.component';
+import { HomeComponent } from './public/pages/home/home.component';
+import { HeaderComponent } from './shared/header/header.component';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
-import { CardComponent } from './components/card/card.component';
-import { PresentationComponent } from './components/presentation/presentation.component';
-import { FormKebabComponent } from './pages/form-kebab/form-kebab.component';
-import {ReactiveFormsModule} from "@angular/forms";
-import { DashboardKebabComponent } from './pages/dashboard-kebab/dashboard-kebab.component';
-import { NavigationComponent } from './components/navigation/navigation.component';
+import { CardComponent } from './shared/card/card.component';
+import { PresentationComponent } from './shared/presentation/presentation.component';
+import { FormKebabComponent } from './modules/admin/pages/form-kebab/form-kebab.component';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import { DashboardKebabComponent } from './modules/admin/pages/dashboard-kebab/dashboard-kebab.component';
+import { NavigationComponent } from './shared/navigation/navigation.component';
 import {HttpClientModule} from "@angular/common/http";
-import { DialogComponent } from './components/dialog/dialog.component';
-import { OrderComponent } from './pages/order/order.component';
-import { PanierComponent } from './pages/panier/panier.component';
+import { DialogComponent } from './shared/ui/dialog/dialog.component';
+import { OrderComponent } from './public/pages/order/order.component';
+import { PanierComponent } from './public/pages/panier/panier.component';
 
 @NgModule({
   declarations: [
@@ -32,12 +32,13 @@ import { PanierComponent } from './pages/panier/panier.component';
     OrderComponent,
     PanierComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule,
-    HttpClientModule
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

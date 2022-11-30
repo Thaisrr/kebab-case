@@ -1,0 +1,41 @@
+<main *ngIf="sandwich">
+  <h1>{{sandwich.name | titlecase}}</h1>
+
+  <form (ngSubmit)="saveOrder($event)" [formGroup]="order_form">
+    <fieldset>
+      <legend>Mon Sandwich <span class="emoji">🥙</span></legend>
+      <div>
+        <label for="protein">Protéine</label>
+        <select id="protein" formControlName="protein">
+          <option disabled  value="">--Choisissez votre protéine</option>
+          <option *ngFor="let p of proteins" [value]="p">{{p}}</option>
+        </select>
+      </div>
+    </fieldset>
+    <div>
+      <fieldset>
+        <legend>Ma Boisson <span class="emoji">🥤</span></legend>
+        <div *ngFor="let b of boissons">
+          <input name="boisson" formControlName="boisson" [id]="b"  type="radio" [value]="b">
+          <label [for]="b">{{b}}</label>
+        </div>
+      </fieldset>
+    </div>
+    <div>
+      <fieldset formArrayName="legumes">
+        <legend>Mes Légumes <span class="emoji">🥦</span></legend>
+        <div *ngFor="let v of veggies">
+          <input  [id]="v"  [value]="v" type="checkbox" name="veggies" (change)="addVeggie(v, $event)" />
+          <label [for]="v">{{v}}</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div>
+      <label for="quantity">Quantité</label>
+      <input id="quantity" formControlName="quantity">
+    </div>
+    <button>Ajouter au panier</button>
+  </form>
+
+</main>

@@ -1,0 +1,18 @@
+.total {
+  border: solid 2px black;
+  border-top: none;
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  text-align: right;
+}
+
+.total span {
+  padding: 10px;
+}
+
+.total span:last-child {
+  border-left: solid 2px;
+  text-align: center;
+  font-weight: bold;
+}
+

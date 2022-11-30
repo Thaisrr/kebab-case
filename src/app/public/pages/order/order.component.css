@@ -1,0 +1,26 @@
+form {
+  width: max(60%, 400px);
+  margin: auto;
+}
+
+fieldset {
+  border-radius: 16px;
+  margin: 20px auto;
+}
+
+legend {
+  font-family: var(--title-font);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+fieldset {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 15px 10px;
+}
+
+.emoji {
+  padding: 0 5px;
+  text-shadow: 1px 1px 4px #00000099;
+}

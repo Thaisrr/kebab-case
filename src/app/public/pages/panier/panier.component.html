@@ -1,0 +1,35 @@
+<h1>Mon Panier</h1>
+
+<main class="centered">
+  <table>
+    <thead>
+      <tr>
+        <th>Menu</th>
+        <th>Protéine</th>
+        <th>Légumes</th>
+        <th>Boisson</th>
+        <th>Quantité</th>
+        <th>P.U</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let menu of panier.menus">
+          <td>{{menu.name}}</td>
+          <td>{{menu.protein}}</td>
+          <td>{{menu.legumes.join(', ')}}</td>
+          <td>{{menu.boissons}}</td>
+          <td>{{menu.quantity}}</td>
+          <td>{{menu.price}}€</td>
+          <td>{{menu.total}}€</td>
+        </tr>
+    </tbody>
+  </table>
+  <div class="total">
+    <span>Total :</span>
+    <span>{{panier.total}}€</span>
+  </div>
+  <p>
+    <button (click)="order()">Commander</button>
+  </p>
+</main>

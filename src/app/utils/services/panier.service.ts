@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Order, Panier} from "../models/panier";
+import {Menu, Panier} from "../models/panier";
 import {HttpClient} from "@angular/common/http";
 import {BehaviorSubject, Observable, tap} from "rxjs";
 
@@ -29,13 +29,13 @@ export class PanierService {
     }
 }
 
-  add(menu: Order) {
+  add(menu: Menu) {
     this.panier.menus.push(menu);
     this.panier_size$.next(this.panier.menus.length)
     this.calculateTotal();
   }
 
-  remove(menu: Order) {
+  remove(menu: Menu) {
     const index = this.panier.menus.indexOf(menu);
     this.panier.menus.slice(index, 1);
     this.panier_size$.next(this.panier.menus.length)
