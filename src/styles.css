@@ -124,6 +124,11 @@ thead {
   border-radius: 8px;
 }
 
+th {
+  background-color: var(--yellow);
+
+}
+
 thead th:last-child {
   border-top-right-radius: 8px;
 }

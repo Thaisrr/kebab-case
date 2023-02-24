@@ -28,20 +28,14 @@ export class DashboardKebabComponent implements OnInit {
    */
   deleteKebab(confirm: boolean) {
     if(this.kebab_to_delete && confirm && this.kebab_to_delete.id) {
-      // todo: (2) modifier l'appel au service
-      // faire un console.log si suppression OK
-      // ( opt ) : recharger les données
       this.kebabService.deleteOne(this.kebab_to_delete.id)
         .subscribe(() => this.loadSandwiches());
-
       this.toggle();
     } else if (!confirm) {
       this.toggle()
     }
-
   }
 
-  // ouvre et ferme la fenêtre de dialogue
   toggle(delete_obj?: Sandwich) {
     this.kebab_to_delete = delete_obj;
     this.open_dialog = !this.open_dialog;
